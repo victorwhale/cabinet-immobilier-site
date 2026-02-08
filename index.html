@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabinet Beaumont & Associ&eacute;s - Droit Immobilier | Lyon</title>
+  <meta name="description" content="Cabinet d'avocats sp&eacute;cialis&eacute; en droit immobilier &agrave; Lyon. Transactions, contentieux, construction, copropri&eacute;t&eacute;. Plus de 15 ans d'exp&eacute;rience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --white-warm: #FDFBF7;
+      --cream: #F5F0E8;
+      --cream-dark: #EDE5D8;
+      --navy: #1A1A2E;
+      --navy-light: #2A2A42;
+      --green: #2D6A4F;
+      --green-light: #40916C;
+      --green-dark: #1B4332;
+      --gold: #B8860B;
+      --gold-light: #D4A843;
+      --text-dark: #2C2C2C;
+      --text-medium: #5A5A5A;
+      --text-light: #8A8A8A;
+      --shadow-sm: 0 2px 8px rgba(26, 26, 46, 0.06);
+      --shadow-md: 0 4px 20px rgba(26, 26, 46, 0.08);
+      --shadow-lg: 0 8px 40px rgba(26, 26, 46, 0.12);
+      --shadow-xl: 0 16px 60px rgba(26, 26, 46, 0.15);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--white-warm);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+    h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition);
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 7rem 0;
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-title {
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: all var(--transition);
+      background: transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.75rem 0;
+      box-shadow: 0 1px 20px rgba(26, 26, 46, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .nav-logo-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-medium);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--green);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: var(--white-warm) !important;
+      background: var(--navy);
+      padding: 0.65rem 1.5rem !important;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-dark) !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: all var(--transition);
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(165deg, var(--white-warm) 0%, var(--cream) 50%, #EDE8DD 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 140%;
+      background: radial-gradient(ellipse, rgba(45, 106, 79, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26, 26, 46, 0.08), transparent);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding-top: 6rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(45, 106, 79, 0.08);
+      border: 1px solid rgba(45, 106, 79, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-medium);
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary svg {
+      width: 18px;
+      height: 18px;
+      transition: transform var(--transition);
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--navy);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(26, 26, 46, 0.2);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      background: rgba(26, 26, 46, 0.03);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(26, 26, 46, 0) 40%,
+        rgba(26, 26, 46, 0.6) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 40%, var(--green-dark) 100%);
+    }
+
+    .hero-image-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      z-index: 2;
+      color: white;
+    }
+
+    .hero-image-text h3 {
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-image-text p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 3;
+    }
+
+    .hero-card-stats {
+      top: 10%;
+      right: -10%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-card-stats .stat-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(45, 106, 79, 0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card-stats .stat-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--green);
+    }
+
+    .hero-card-stats .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .hero-card-stats .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .hero-card-trust {
+      bottom: 15%;
+      left: -8%;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .trust-stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .trust-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+    }
+
+    .trust-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .trust-sub {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--navy);
+      padding: 1.75rem 0;
+    }
+
+    .trust-bar-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .trust-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green-light);
+      flex-shrink: 0;
+    }
+
+    /* ===== EXPERTISES ===== */
+    .expertises {
+      background: var(--white-warm);
+      position: relative;
+    }
+
+    .expertises::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26, 26, 46, 0.06), transparent);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .expertise-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      border: 1px solid rgba(26, 26, 46, 0.06);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .expertise-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .expertise-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(45, 106, 79, 0.08);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all var(--transition);
+    }
+
+    .expertise-card:hover .expertise-icon {
+      background: var(--green);
+    }
+
+    .expertise-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--green);
+      transition: color var(--transition);
+    }
+
+    .expertise-card:hover .expertise-icon svg {
+      color: white;
+    }
+
+    .expertise-card h3 {
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+    }
+
+    .expertise-card p {
+      color: var(--text-medium);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .expertise-tag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--green);
+      background: rgba(45, 106, 79, 0.06);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      border: 1px solid rgba(45, 106, 79, 0.1);
+    }
+
+    /* ===== ABOUT / EQUIPE ===== */
+    .about {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--white-warm) 100%);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-content .section-subtitle {
+      margin-bottom: 2rem;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .about-feature {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .about-feature-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(45, 106, 79, 0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-feature-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green);
+    }
+
+    .about-feature h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-feature p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img:first-child {
+      grid-row: span 2;
+    }
+
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--green-dark) 100%);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+
+    .about-img:not(:first-child) .about-img-placeholder {
+      aspect-ratio: 1;
+    }
+
+    .about-img-label {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .about-year-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 100px;
+      height: 100px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      z-index: 2;
+    }
+
+    .about-year-badge .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .about-year-badge .label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* ===== CHIFFRES ===== */
+    .chiffres {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chiffres::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(45, 106, 79, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .chiffres .section-label {
+      color: var(--green-light);
+    }
+
+    .chiffres .section-title {
+      color: white;
+    }
+
+    .chiffres .section-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .chiffres-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chiffre-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition);
+    }
+
+    .chiffre-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .chiffre-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .chiffre-suffix {
+      font-size: 2rem;
+      color: var(--green-light);
+    }
+
+    .chiffre-label {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+    }
+
+    .chiffre-divider {
+      width: 30px;
+      height: 2px;
+      background: var(--green);
+      margin: 0.75rem auto;
+      border-radius: 1px;
+    }
+
+    /* ===== TEMOIGNAGES ===== */
+    .temoignages {
+      background: linear-gradient(180deg, var(--white-warm) 0%, var(--cream) 100%);
+    }
+
+    .temoignages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .temoignage-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      border: 1px solid rgba(26, 26, 46, 0.06);
+      transition: all var(--transition);
+    }
+
+    .temoignage-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .temoignage-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .temoignage-stars svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
+    .temoignage-quote {
+      font-size: 1.05rem;
+      color: var(--text-medium);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .temoignage-quote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--green);
+      opacity: 0.3;
+      line-height: 0;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .temoignage-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(26, 26, 46, 0.06);
+    }
+
+    .temoignage-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cream-dark), var(--cream));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .temoignage-name {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .temoignage-role {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: var(--white-warm);
+      position: relative;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26, 26, 46, 0.06), transparent);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact-info .section-subtitle {
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: rgba(45, 106, 79, 0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-detail-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green);
+    }
+
+    .contact-detail h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail p,
+    .contact-detail a {
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .contact-detail a:hover {
+      color: var(--green);
+    }
+
+    .contact-hours {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--cream);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-hours h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-hours p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+
+    .contact-form-wrapper {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(26, 26, 46, 0.04);
+    }
+
+    .contact-form-wrapper h3 {
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .contact-form-wrapper > p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid rgba(26, 26, 46, 0.12);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white-warm);
+      transition: all var(--transition);
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-light);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.08);
+      background: white;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235A5A5A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 4rem 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer-brand .nav-logo-main {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .footer-brand .nav-logo-sub {
+      color: var(--green-light);
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      max-width: 320px;
+    }
+
+    .footer h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal-links a:hover {
+      color: white;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .hero-description {
+        margin: 0 auto 2.5rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .hero-card-stats {
+        right: -5%;
+        top: 5%;
+      }
+
+      .hero-card-trust {
+        left: -5%;
+        bottom: 10%;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-visual {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .chiffres-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 5rem 0;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(253, 251, 247, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .nav-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      .nav-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+      }
+
+      .hero-floating-card {
+        display: none;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-card {
+        padding: 2rem;
+      }
+
+      .temoignages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chiffres-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .chiffre-number {
+        font-size: 2.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-wrapper {
+        padding: 2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .about-image-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-year-badge {
+        bottom: -1rem;
+        right: -0.5rem;
+        width: 80px;
+        height: 80px;
+      }
+
+      .about-year-badge .number {
+        font-size: 1.5rem;
+      }
+
+      .trust-bar-inner {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .chiffres-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-bar-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-main">Beaumont & Associ&eacute;s</span>
+        <span class="nav-logo-sub">Droit Immobilier</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#expertises">Expertises</a></li>
+        <li><a href="#cabinet">Le Cabinet</a></li>
+        <li><a href="#temoignages">T&eacute;moignages</a></li>
+        <li><a href="#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">Cabinet d'avocats &agrave; Lyon</div>
+        <h1>Prot&eacute;gez vos <em>investissements</em> immobiliers</h1>
+        <p class="hero-description">
+          Depuis 2008, notre cabinet accompagne particuliers et professionnels dans toutes les dimensions du droit immobilier : transactions, contentieux, construction et copropri&eacute;t&eacute;.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">
+            Prendre rendez-vous
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#expertises" class="btn-secondary">
+            Nos expertises
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <div class="hero-image"></div>
+          <div class="hero-image-text">
+            <h3>Ma&icirc;tre C. Beaumont</h3>
+            <p>Associ&eacute;e fondatrice &middot; Barreau de Lyon</p>
+          </div>
+        </div>
+        <div class="hero-floating-card hero-card-stats">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Dossiers trait&eacute;s</div>
+          </div>
+        </div>
+        <div class="hero-floating-card hero-card-trust">
+          <div>
+            <div class="trust-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="trust-text">
+              95% satisfaction
+              <div class="trust-sub">Avis clients v&eacute;rifi&eacute;s</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Barreau de Lyon
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Depuis 2008
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        4 avocats sp&eacute;cialis&eacute;s
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        500+ dossiers trait&eacute;s
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXPERTISES ===== -->
+  <section class="section expertises" id="expertises">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos domaines d'intervention</span>
+        <h2 class="section-title">Une expertise compl&egrave;te en<br>droit immobilier</h2>
+        <p class="section-subtitle">Notre &eacute;quipe couvre l'ensemble des probl&eacute;matiques juridiques li&eacute;es &agrave; l'immobilier, de la transaction &agrave; la r&eacute;solution des litiges.</p>
+      </div>
+      <div class="expertise-grid">
+        <!-- Card 1 -->
+        <div class="expertise-card reveal reveal-delay-1">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Transactions immobili&egrave;res</h3>
+          <p>Nous s&eacute;curisons vos acquisitions, ventes et n&eacute;gociations de baux commerciaux. Chaque transaction est analys&eacute;e pour prot&eacute;ger vos int&eacute;r&ecirc;ts et pr&eacute;venir les risques juridiques.</p>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Achat / Vente</span>
+            <span class="expertise-tag">Baux commerciaux</span>
+            <span class="expertise-tag">Promesses</span>
+            <span class="expertise-tag">Due diligence</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="expertise-card reveal reveal-delay-2">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Contentieux immobilier</h3>
+          <p>D&eacute;fense de vos droits devant les tribunaux pour tout litige li&eacute; &agrave; la propri&eacute;t&eacute;, la copropri&eacute;t&eacute; ou les vices cach&eacute;s. Nous privil&eacute;gions la n&eacute;gociation amiable avant l'action judiciaire.</p>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Litiges copropri&eacute;t&eacute;</span>
+            <span class="expertise-tag">Vices cach&eacute;s</span>
+            <span class="expertise-tag">Troubles de voisinage</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="expertise-card reveal reveal-delay-3">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <h3>Droit de la construction</h3>
+          <p>Accompagnement des ma&icirc;tres d'ouvrage et constructeurs face aux malfacons, d&eacute;sordres et litiges. Mise en &oelig;uvre des garanties d&eacute;cennale, biennale et de parfait ach&egrave;vement.</p>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Malfacons</span>
+            <span class="expertise-tag">Garantie d&eacute;cennale</span>
+            <span class="expertise-tag">R&eacute;ception des travaux</span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="expertise-card reveal reveal-delay-4">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Copropri&eacute;t&eacute; &amp; Baux</h3>
+          <p>Conseil aux copropri&eacute;taires, syndics et bailleurs sur la gestion courante et les litiges. R&eacute;daction et analyse de baux d'habitation et professionnels conform&eacute;ment &agrave; la loi ALUR.</p>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Assembl&eacute;es g&eacute;n&eacute;rales</span>
+            <span class="expertise-tag">R&egrave;glement de copropri&eacute;t&eacute;</span>
+            <span class="expertise-tag">Baux d'habitation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="cabinet">
+    <div class="container about-grid">
+      <div class="about-content">
+        <div class="reveal">
+          <span class="section-label">Le cabinet</span>
+          <h2 class="section-title">Un cabinet &agrave; taille humaine,<br>une expertise sans compromis</h2>
+          <p class="section-subtitle">
+            Fond&eacute; en 2008 par Ma&icirc;tre Caroline Beaumont, notre cabinet r&eacute;unit aujourd'hui quatre avocats exclusivement d&eacute;di&eacute;s au droit immobilier. Implant&eacute;s au c&oelig;ur de Lyon, nous offrons un accompagnement personnalis&eacute; et r&eacute;actif.
+          </p>
+        </div>
+        <div class="about-features">
+          <div class="about-feature reveal reveal-delay-1">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4>Sp&eacute;cialisation exclusive</h4>
+              <p>100% de notre activit&eacute; est consacr&eacute;e au droit immobilier, garantissant une ma&icirc;trise approfondie de chaque sujet.</p>
+            </div>
+          </div>
+          <div class="about-feature reveal reveal-delay-2">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Approche collaborative</h4>
+              <p>Chaque dossier b&eacute;n&eacute;ficie de l'expertise crois&eacute;e de notre &eacute;quipe pour une strat&eacute;gie juridique optimale.</p>
+            </div>
+          </div>
+          <div class="about-feature reveal reveal-delay-3">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>R&eacute;activit&eacute; et transparence</h4>
+              <p>Nous nous engageons sur des d&eacute;lais de r&eacute;ponse courts et une communication r&eacute;guli&egrave;re sur l'avancement de votre dossier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-image-grid">
+          <div class="about-img">
+            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #1A1A2E 0%, #2A2A42 50%, #2D6A4F 100%);">
+              <span class="about-img-label">Notre &eacute;quipe &agrave; Lyon</span>
+            </div>
+          </div>
+          <div class="about-img">
+            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #2D6A4F 0%, #1B4332 100%);">
+              <span class="about-img-label">Salle de conf&eacute;rence</span>
+            </div>
+          </div>
+          <div class="about-img">
+            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #2A2A42 0%, #1A1A2E 100%);">
+              <span class="about-img-label">Biblioth&egrave;que juridique</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-year-badge">
+          <span class="number">15</span>
+          <span class="label">Ann&eacute;es</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHIFFRES ===== -->
+  <section class="section chiffres" id="chiffres">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Chiffres cl&eacute;s</span>
+        <h2 class="section-title">Des r&eacute;sultats qui parlent<br>d'eux-m&ecirc;mes</h2>
+        <p class="section-subtitle">Notre engagement pour l'excellence se traduit par des r&eacute;sultats concrets au service de nos clients.</p>
+      </div>
+      <div class="chiffres-grid">
+        <div class="chiffre-card reveal reveal-delay-1">
+          <div class="chiffre-number">500<span class="chiffre-suffix">+</span></div>
+          <div class="chiffre-divider"></div>
+          <div class="chiffre-label">Dossiers trait&eacute;s avec succ&egrave;s</div>
+        </div>
+        <div class="chiffre-card reveal reveal-delay-2">
+          <div class="chiffre-number">15</div>
+          <div class="chiffre-divider"></div>
+          <div class="chiffre-label">Ann&eacute;es d'exp&eacute;rience</div>
+        </div>
+        <div class="chiffre-card reveal reveal-delay-3">
+          <div class="chiffre-number">95<span class="chiffre-suffix">%</span></div>
+          <div class="chiffre-divider"></div>
+          <div class="chiffre-label">Taux de satisfaction client</div>
+        </div>
+        <div class="chiffre-card reveal reveal-delay-4">
+          <div class="chiffre-number">4</div>
+          <div class="chiffre-divider"></div>
+          <div class="chiffre-label">Avocats sp&eacute;cialis&eacute;s</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEMOIGNAGES ===== -->
+  <section class="section temoignages" id="temoignages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">T&eacute;moignages</span>
+        <h2 class="section-title">La confiance de nos clients</h2>
+        <p class="section-subtitle">D&eacute;couvrez les retours d'exp&eacute;rience de ceux qui nous ont fait confiance pour prot&eacute;ger leurs int&eacute;r&ecirc;ts immobiliers.</p>
+      </div>
+      <div class="temoignages-grid">
+        <!-- Testimonial 1 -->
+        <div class="temoignage-card reveal reveal-delay-1">
+          <div class="temoignage-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="temoignage-quote">
+            Le cabinet Beaumont nous a accompagn&eacute;s dans l'acquisition de notre immeuble de rapport &agrave; Lyon 3e. Leur vigilance sur les clauses du compromis nous a &eacute;vit&eacute; un litige potentiel de plus de 40 000 euros. Un professionnalisme remarquable.
+          </p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">PD</div>
+            <div>
+              <div class="temoignage-name">Philippe Durand</div>
+              <div class="temoignage-role">Investisseur immobilier</div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="temoignage-card reveal reveal-delay-2">
+          <div class="temoignage-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="temoignage-quote">
+            Apr&egrave;s la d&eacute;couverte de vices cach&eacute;s dans notre maison, Ma&icirc;tre Beaumont a pris en charge notre dossier avec une efficacit&eacute; impressionnante. Gr&acirc;ce &agrave; son expertise, nous avons obtenu une indemnisation int&eacute;grale en moins de six mois.
+          </p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">SM</div>
+            <div>
+              <div class="temoignage-name">Sophie Martin-Lacroix</div>
+              <div class="temoignage-role">Propri&eacute;taire &agrave; Villeurbanne</div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="temoignage-card reveal reveal-delay-3">
+          <div class="temoignage-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="temoignage-quote">
+            En tant que promoteur, je travaille avec le cabinet Beaumont depuis plus de cinq ans. Leur connaissance du droit de la construction et leur r&eacute;activit&eacute; en font un partenaire incontournable pour s&eacute;curiser nos op&eacute;rations.
+          </p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">JR</div>
+            <div>
+              <div class="temoignage-name">Jean-Marc Rousseau</div>
+              <div class="temoignage-role">Directeur, Rousseau Promotion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Parlons de votre projet</h2>
+          <p class="section-subtitle">Prenez rendez-vous pour une premi&egrave;re consultation. Nous &eacute;tudierons votre situation et vous proposerons une strat&eacute;gie adapt&eacute;e.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Adresse</h4>
+                <p>42 rue de la R&eacute;publique<br>69002 Lyon, France</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>T&eacute;l&eacute;phone</h4>
+                <a href="tel:+33472123456">04 72 12 34 56</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:contact@beaumont-immobilier.fr">contact@beaumont-immobilier.fr</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <h4>Horaires d'ouverture</h4>
+            <p>
+              Lundi &ndash; Vendredi : 9h00 &ndash; 18h30<br>
+              Samedi : Sur rendez-vous uniquement
+            </p>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal reveal-delay-2">
+          <h3>Demande de consultation</h3>
+          <p>Remplissez ce formulaire et nous vous recontacterons sous 24h.</p>
+          <form id="contactForm" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nom">Nom</label>
+                <input class="form-input" type="text" id="nom" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="prenom">Pr&eacute;nom</label>
+                <input class="form-input" type="text" id="prenom" placeholder="Votre pr&eacute;nom" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" placeholder="votre@email.fr" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="telephone">T&eacute;l&eacute;phone</label>
+                <input class="form-input" type="tel" id="telephone" placeholder="06 12 34 56 78">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sujet">Domaine concern&eacute;</label>
+              <select class="form-select" id="sujet">
+                <option value="" disabled selected>S&eacute;lectionnez un domaine</option>
+                <option value="transaction">Transaction immobili&egrave;re</option>
+                <option value="contentieux">Contentieux immobilier</option>
+                <option value="construction">Droit de la construction</option>
+                <option value="copropriete">Copropri&eacute;t&eacute; &amp; Baux</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Votre message</label>
+              <textarea class="form-textarea" id="message" placeholder="D&eacute;crivez bri&egrave;vement votre situation..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Envoyer ma demande</button>
+            <p class="form-note">Vos donn&eacute;es sont trait&eacute;es conform&eacute;ment au RGPD. Consultation initiale gratuite.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="nav-logo-main">Beaumont & Associ&eacute;s</span>
+            <span class="nav-logo-sub">Droit Immobilier</span>
+          </div>
+          <p>Cabinet d'avocats sp&eacute;cialis&eacute; en droit immobilier &agrave; Lyon. Nous accompagnons particuliers et professionnels depuis 2008 dans la protection de leur patrimoine.</p>
+        </div>
+        <div>
+          <h4>Expertises</h4>
+          <ul class="footer-links">
+            <li><a href="#expertises">Transactions</a></li>
+            <li><a href="#expertises">Contentieux</a></li>
+            <li><a href="#expertises">Construction</a></li>
+            <li><a href="#expertises">Copropri&eacute;t&eacute;</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Le Cabinet</h4>
+          <ul class="footer-links">
+            <li><a href="#cabinet">Notre &eacute;quipe</a></li>
+            <li><a href="#temoignages">T&eacute;moignages</a></li>
+            <li><a href="#chiffres">Chiffres cl&eacute;s</a></li>
+            <li><a href="#contact">Nous contacter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Informations</h4>
+          <ul class="footer-links">
+            <li><a href="#">Mentions l&eacute;gales</a></li>
+            <li><a href="#">Politique de confidentialit&eacute;</a></li>
+            <li><a href="#">Honoraires</a></li>
+            <li><a href="#">Plan du site</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Cabinet Beaumont & Associ&eacute;s. Tous droits r&eacute;serv&eacute;s.</span>
+        <div class="footer-legal-links">
+          <a href="#">Mentions l&eacute;gales</a>
+          <a href="#">Confidentialit&eacute;</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== SCROLL REVEAL ===== */
+    (function() {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ===== NAVBAR SCROLL ===== */
+    (function() {
+      var nav = document.getElementById('nav');
+      var lastScroll = 0;
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset;
+        if (currentScroll > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+
+    /* ===== MOBILE MENU ===== */
+    (function() {
+      var hamburger = document.getElementById('navHamburger');
+      var navLinks = document.getElementById('navLinks');
+
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    })();
+
+    /* ===== SMOOTH SCROLL ===== */
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            var offset = 80;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+
+    /* ===== ANIMATED COUNTERS ===== */
+    (function() {
+      var counters = document.querySelectorAll('.chiffre-number');
+      var animated = new Set();
+
+      function animateCounter(el) {
+        var text = el.textContent;
+        var suffix = el.querySelector('.chiffre-suffix');
+        var suffixText = suffix ? suffix.textContent : '';
+        var numText = text.replace(suffixText, '').trim();
+        var target = parseInt(numText, 10);
+
+        if (isNaN(target)) return;
+
+        var duration = 2000;
+        var start = 0;
+        var startTime = null;
+
+        function easeOutQuart(t) {
+          return 1 - Math.pow(1 - t, 4);
+        }
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var current = Math.floor(easeOutQuart(progress) * target);
+
+          if (suffix) {
+            el.textContent = '';
+            el.appendChild(document.createTextNode(current));
+            var newSuffix = document.createElement('span');
+            newSuffix.className = 'chiffre-suffix';
+            newSuffix.textContent = suffixText;
+            el.appendChild(newSuffix);
+          } else {
+            el.textContent = current;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !animated.has(entry.target)) {
+            animated.add(entry.target);
+            animateCounter(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function(counter) {
+        counterObserver.observe(counter);
+      });
+    })();
+  </script>
+</body>
+</html>
