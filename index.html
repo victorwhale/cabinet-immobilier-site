@@ -438,7 +438,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 40%, var(--green-dark) 100%);
+      display: block;
     }
 
     .hero-image-text {
@@ -765,11 +765,29 @@
     .about-img-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--green-dark) 100%);
       position: relative;
       display: flex;
       align-items: flex-end;
       padding: 1.5rem;
+      overflow: hidden;
+    }
+
+    .about-img-placeholder img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .about-img-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(26, 26, 46, 0) 40%, rgba(26, 26, 46, 0.55) 100%);
+      z-index: 1;
     }
 
     .about-img:not(:first-child) .about-img-placeholder {
@@ -781,6 +799,8 @@
       font-size: 0.85rem;
       font-weight: 500;
       opacity: 0.9;
+      position: relative;
+      z-index: 2;
     }
 
     .about-year-badge {
@@ -983,6 +1003,58 @@
       font-size: 0.8rem;
       color: var(--text-light);
       margin-top: 2px;
+    }
+
+    /* ===== LYON BANNER ===== */
+    .lyon-banner {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .lyon-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lyon-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(26, 26, 46, 0.3) 0%,
+        rgba(26, 26, 46, 0.5) 50%,
+        rgba(26, 26, 46, 0.7) 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lyon-banner-text {
+      text-align: center;
+      color: white;
+    }
+
+    .lyon-banner-text h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .lyon-banner-text p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .lyon-banner {
+        height: 220px;
+      }
     }
 
     /* ===== CONTACT ===== */
@@ -1505,7 +1577,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-image-wrapper">
-          <div class="hero-image"></div>
+          <img class="hero-image" src="img/hero.jpg" alt="Immeuble r&eacute;sidentiel &eacute;l&eacute;gant &agrave; Lyon" loading="eager">
           <div class="hero-image-text">
             <h3>Ma&icirc;tre C. Beaumont</h3>
             <p>Associ&eacute;e fondatrice &middot; Barreau de Lyon</p>
@@ -1671,17 +1743,20 @@
       <div class="about-visual reveal">
         <div class="about-image-grid">
           <div class="about-img">
-            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #1A1A2E 0%, #2A2A42 50%, #2D6A4F 100%);">
-              <span class="about-img-label">Notre &eacute;quipe &agrave; Lyon</span>
+            <div class="about-img-placeholder">
+              <img src="img/office.jpg" alt="Int&eacute;rieur du cabinet Beaumont &amp; Associ&eacute;s" loading="lazy">
+              <span class="about-img-label">Notre cabinet &agrave; Lyon</span>
             </div>
           </div>
           <div class="about-img">
-            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #2D6A4F 0%, #1B4332 100%);">
-              <span class="about-img-label">Salle de conf&eacute;rence</span>
+            <div class="about-img-placeholder">
+              <img src="img/lyon.jpg" alt="Vue panoramique de Lyon" loading="lazy">
+              <span class="about-img-label">Lyon, notre ville</span>
             </div>
           </div>
           <div class="about-img">
-            <div class="about-img-placeholder" style="background: linear-gradient(160deg, #2A2A42 0%, #1A1A2E 100%);">
+            <div class="about-img-placeholder">
+              <img src="img/office.jpg" alt="Biblioth&egrave;que juridique du cabinet" loading="lazy" style="object-position: right center;">
               <span class="about-img-label">Biblioth&egrave;que juridique</span>
             </div>
           </div>
@@ -1799,6 +1874,17 @@
       </div>
     </div>
   </section>
+
+  <!-- ===== LYON BANNER ===== -->
+  <div class="lyon-banner">
+    <img src="img/lyon.jpg" alt="Vue panoramique de Lyon au coucher du soleil" loading="lazy">
+    <div class="lyon-banner-overlay">
+      <div class="lyon-banner-text reveal">
+        <h2>Implant&eacute;s au c&oelig;ur de Lyon depuis 2008</h2>
+        <p>42 rue de la R&eacute;publique &mdash; Lyon 2&egrave;me</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== CONTACT ===== -->
   <section class="section contact" id="contact">
